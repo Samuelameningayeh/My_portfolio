@@ -450,20 +450,20 @@ ol a:hover{
     top: 0;
     background: crimson;
 }
-.skills-content .right .html::before{
-    width: 90%;
+.skills-content .right .Excel::before{
+    width: 70%;
 }
-.skills-content .right .css::before{
-    width: 50%;
-}
-.skills-content .right .js::before{
+.skills-content .right .Python::before{
     width: 80%;
 }
-.skills-content .right .php::before{
+.skills-content .right .R::before{
+    width: 80%;
+}
+.skills-content .right .SQL::before{
     width: 50%;
 }
-.skills-content .right .mysql::before{
-    width: 70%;
+.skills-content .right .BI::before{
+    width: 80%;
 }
 .skills-content .right .java::before{
     width: 50%;
