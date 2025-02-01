@@ -35,14 +35,14 @@ $(document).ready(function(){
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Data Analyst", "Machine Learning Engineer", "AWS Cloud Practitioner", "Graphic Designer"],
+        strings: ["Data Analyst", "AI Engineer", "Machine Learning Engineer", "AWS Cloud Practitioner", "Graphic Designer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
     var typed = new Typed(".typing-2", {
-        strings: ["Data Analyst", "Machine Learning Engineer", "AWS Cloud Practitioner", "Graphic Designer"],
+        strings: ["Data Analyst", "AI Engineer", "Machine Learning Engineer", "AWS Cloud Practitioner", "Graphic Designer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
@@ -61,5 +61,21 @@ $(document).ready(function(){
                 nav: false
             }
         }
+    });
+
+    // changing images
+    const container = document.getElementById('imageContainer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const scrollAmount = window.innerWidth; // Amount to scroll equals the viewport width
+
+    // Scroll to the next image
+    nextBtn.addEventListener('click', () => {
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    // Scroll to the previous image
+    prevBtn.addEventListener('click', () => {
+       container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     });
 });
