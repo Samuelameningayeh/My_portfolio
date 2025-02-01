@@ -450,19 +450,19 @@ ol a:hover{
     top: 0;
     background: crimson;
 }
-.skills-content .right .excel::before{
+.skills-content .right .html::before{
     width: 70%;
 }
-.skills-content .right .python::before{
+.skills-content .right .css::before{
     width: 80%;
 }
-.skills-content .right .r::before{
+.skills-content .right .js::before{
     width: 80%;
 }
-.skills-content .right .sql::before{
+.skills-content .right .php::before{
     width: 50%;
 }
-.skills-content .right .bi::before{
+.skills-content .right .mysql::before{
     width: 80%;
 }
 .skills-content .right .java::before{
