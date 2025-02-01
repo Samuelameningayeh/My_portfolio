@@ -508,13 +508,14 @@ ol a:hover{
 }
 
 .image-container img {
-    display: flex;
     flex-shrink: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ensures the image covers the container */
     scroll-snap-align: center;
+    border-radius: 10px; /* Optional: Adds rounded corners */
 }
+
 
 .buttons {
     text-align: center;
