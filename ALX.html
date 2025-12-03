@@ -42,41 +42,35 @@
         <div class="max-width">
             <h2 class="title">Artificial Intelligence Projects</h2>
             <div class="serv-content">
-                <p>
-                    Welcome to my AI project portfolio! <br>
-                    Here you'll find a curated selection of my work, demonstrating my proficiency in various AI domains. 
-                    Each project includes: <br>
-                    <ul>
-                        <li>Project title</li>
-                        <li>Project type (e.g. classification, regression, etc.)</li>
-                        <li>Technologies used (e.g. Python, TensorFlow, etc.)</li>
-                        <li>Results achieved (e.g. accuracy, F1 score, etc.)</li>
-                    </ul>
+                <div style="background: #222; padding: 30px; border-radius: 10px; margin-bottom: 40px; color: white;">
+                    <h3 style="color: crimson; font-size: 24px; margin-bottom: 10px;">1. AI-Powered Malaria Diagnostics (Deep Learning)</h3>
+                    <h4 style="font-style: italic; color: #ccc;">Engineering a Convolutional Neural Network (CNN) for Medical Imaging</h4>
                     <br>
-                    I'm constantly exploring new AI techniques and applications, so this page is regularly updated with my latest endeavors.
-                </p>
-                <div class="card">
-                    <a href="https://docs.google.com/presentation/d/1bKX85fbtp0_9CSK9J8-3ACZWGjpM6JdE4lUUqHNRwn8/edit?usp=sharing">
-                    <div class="box">
-                        <i class="fas fa-code"></i>
-                        <div class="text">Slide deck of my Group Project work</div>
-                        <p>This Project addresses unemployment in Ghana through creation of jobs. <br>
-                            Click here to access the presentation of the project work.</p>
-                    </div>
-                    </a>
-                </div>
 
-                <div class="card">
-                    <a href="https://youtu.be/DTFICWS1NCc">
-                    <div class="box">
-                        <i class="fas fa-code"></i>
-                        <div class="text">Youtube Presentation</div>
-                        <p>This is a link to my group's project presentation on Youtube. <br> 
-                            Click here to watch the presentation of the project work.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
+                        
+                        <div style="flex: 1; min-width: 300px;">
+                            <p><strong>The Challenge:</strong> Malaria diagnosis traditionally relies on manual microscopic examination, which is time-consuming and prone to human error. Automation is critical for scaling healthcare in resource-limited settings.</p>
+                            <br>
+                            <p><strong>The Solution:</strong> I built and deployed an end-to-end Computer Vision system using <strong>PyTorch</strong>. The model analyzes thin blood smear images to classify cells as "Parasitized" or "Uninfected" in real-time.</p>
+                            <br>
+                            <ul style="padding-left: 20px;">
+                                <li><strong>Architecture:</strong> Custom 4-Layer CNN (Conv2d, MaxPool, ReLU, Dropout).</li>
+                                <li><strong>Performance:</strong> Achieved <strong>~95% Accuracy</strong> on the NIH Malaria Dataset.</li>
+                                <li><strong>Deployment:</strong> Engineered a full-stack web application using <strong>Streamlit</strong> for instant browser-based inference.</li>
+                            </ul>
+                            <br><br>
+                            <a href="https://malaria-detection-cnn-samuelayeh.streamlit.app/" target="_blank" class="btn" style="background: crimson; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-right: 10px;">🚀 Launch Live App</a>
+                            <a href="https://github.com/Samuelameningayeh/malaria-detection-cnn" target="_blank" class="btn" style="background: #444; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">View Code</a>
+                        </div>
+
+                        <div style="flex: 1; min-width: 300px;">
+                            <img src="https://raw.githubusercontent.com/Samuelameningayeh/malaria-detection-cnn/main/app_screenshot.png" alt="Streamlit App Interface" style="width: 100%; border-radius: 10px; border: 2px solid #444;">
+                            <p style="text-align: center; font-size: 12px; color: #888; margin-top: 5px;">Live inference on the Streamlit Cloud</p>
+                        </div>
                     </div>
-                    </a>
                 </div>
-            </div>
+                </div>
         </div>
     </section>
 
