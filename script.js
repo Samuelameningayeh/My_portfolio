@@ -63,64 +63,63 @@ $(document).ready(function(){
         }
     });
 
-    // --- CHANGING IMAGES (SOCIAL LIFE SECTION) ---
+    // --- SOCIAL LIFE IMAGE SLIDER ---
     const container = document.getElementById('imageContainer');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    
-    // Calculate scroll amount based on container width to be responsive
-    // Using container.offsetWidth is safer than window.innerWidth for nested elements
-    const getScrollAmount = () => container.offsetWidth; 
 
-    // Function to handle the scrolling logic
+    // Helper: Get the exact width of one slide (which is now the container width)
+    const getSlideWidth = () => container.clientWidth;
+
     const scrollContainer = (direction) => {
-        const scrollAmount = getScrollAmount();
+        const slideWidth = getSlideWidth();
+        
         if (direction === 'next') {
-            // Check if we are at the end; if so, loop back to start
+            // If we are at the end (allow a small buffer for calculation errors), loop to start
             if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
                 container.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
-                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                container.scrollBy({ left: slideWidth, behavior: 'smooth' });
             }
         } else {
-            // Check if we are at the start; if so, loop to end
+            // If we are at the start, loop to the end
             if (container.scrollLeft <= 0) {
-                 container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+                container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
             } else {
-                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                container.scrollBy({ left: -slideWidth, behavior: 'smooth' });
             }
         }
     };
 
-    // Event Listeners for Buttons
+    // Button Listeners
     nextBtn.addEventListener('click', () => scrollContainer('next'));
     prevBtn.addEventListener('click', () => scrollContainer('prev'));
 
-    // --- AUTO-SLIDER LOGIC ---
-    let slideInterval;
+    // --- AUTO-SLIDE LOGIC ---
+    let autoSlideInterval;
 
     const startAutoSlide = () => {
-        slideInterval = setInterval(() => {
+        // Clear any existing interval just in case
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
             scrollContainer('next');
-        }, 3000); // Change image every 3 seconds
+        }, 4000); // Slides every 4 seconds
     };
 
     const stopAutoSlide = () => {
-        clearInterval(slideInterval);
+        clearInterval(autoSlideInterval);
     };
 
-    // Start the slider initially
+    // Initialize Auto-Slide
     startAutoSlide();
 
-    // Pause on hover (User Experience improvement)
+    // Pause on interaction (Hover or Touch) for better User Experience
     container.addEventListener('mouseenter', stopAutoSlide);
-    
-    // Resume on mouse leave
     container.addEventListener('mouseleave', startAutoSlide);
-
-    // Also pause if the user touches the container (for mobile)
     container.addEventListener('touchstart', stopAutoSlide);
     container.addEventListener('touchend', startAutoSlide);
+    
 });
+
 
 
