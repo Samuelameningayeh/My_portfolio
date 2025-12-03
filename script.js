@@ -63,19 +63,63 @@ $(document).ready(function(){
         }
     });
 
-    // changing images
+    // --- SOCIAL LIFE IMAGE SLIDER ---
     const container = document.getElementById('imageContainer');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    const scrollAmount = window.innerWidth; // Amount to scroll equals the viewport width
 
-    // Scroll to the next image
-    nextBtn.addEventListener('click', () => {
-        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
+    // Helper: Get the exact width of one slide (which is now the container width)
+    const getSlideWidth = () => container.clientWidth;
 
-    // Scroll to the previous image
-    prevBtn.addEventListener('click', () => {
-       container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
+    const scrollContainer = (direction) => {
+        const slideWidth = getSlideWidth();
+        
+        if (direction === 'next') {
+            // If we are at the end (allow a small buffer for calculation errors), loop to start
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
+                container.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: slideWidth, behavior: 'smooth' });
+            }
+        } else {
+            // If we are at the start, loop to the end
+            if (container.scrollLeft <= 0) {
+                container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+            }
+        }
+    };
+
+    // Button Listeners
+    nextBtn.addEventListener('click', () => scrollContainer('next'));
+    prevBtn.addEventListener('click', () => scrollContainer('prev'));
+
+    // --- AUTO-SLIDE LOGIC ---
+    let autoSlideInterval;
+
+    const startAutoSlide = () => {
+        // Clear any existing interval just in case
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
+            scrollContainer('next');
+        }, 4000); // Slides every 4 seconds
+    };
+
+    const stopAutoSlide = () => {
+        clearInterval(autoSlideInterval);
+    };
+
+    // Initialize Auto-Slide
+    startAutoSlide();
+
+    // Pause on interaction (Hover or Touch) for better User Experience
+    container.addEventListener('mouseenter', stopAutoSlide);
+    container.addEventListener('mouseleave', startAutoSlide);
+    container.addEventListener('touchstart', stopAutoSlide);
+    container.addEventListener('touchend', startAutoSlide);
+    
 });
+
+
+

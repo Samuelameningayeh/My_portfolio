@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website</title>
+    <title>AI Projects | Samuel Amening Ayeh</title>
     <link rel="icon" type="image/x-icon" href="images/xum1.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -14,7 +13,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
     <div class="scroll-up-btn">
@@ -28,7 +26,6 @@
                 <li><a href="index.html#about" class="menu-btn">About</a></li>
                 <li><a href="index.html#services" class="menu-btn">Projects</a></li>
                 <li><a href="index.html#skills" class="menu-btn">Skills</a></li>
-                <!--<li><a href="#teams" class="menu-btn">Teams</a></li>-->
                 <li><a href="index.html#contact" class="menu-btn">Contact</a></li>
             </ul>
             <div class="menu-btn">
@@ -37,46 +34,49 @@
         </div>
     </nav>
 
-    <!-- skills section start -->
-    <section class="ALX" id="ALX">
+    <section class="datascience" id="datascience">
         <div class="max-width">
             <h2 class="title">Artificial Intelligence Projects</h2>
-            <div class="serv-content">
-                <div style="background: #222; padding: 30px; border-radius: 10px; margin-bottom: 40px; color: white;">
-                    <h3 style="color: crimson; font-size: 24px; margin-bottom: 10px;">1. AI-Powered Malaria Diagnostics (Deep Learning)</h3>
-                    <h4 style="font-style: italic; color: #ccc;">Engineering a Convolutional Neural Network (CNN) for Medical Imaging</h4>
+            <ol>
+                <li>
+                    <h3>AI-Powered Malaria Diagnostics (Deep Learning)</h3>
+                    <h4><em>Engineering a Convolutional Neural Network (CNN) for Medical Imaging</em></h4>
+                    <br>
+                    
+                    <p><strong>The Challenge:</strong><br>
+                        Malaria diagnosis traditionally relies on manual microscopic examination, which is time-consuming and prone to human error. Automation is critical for scaling healthcare in resource-limited settings.
+                    </p>
                     <br>
 
-                    <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
-                        
-                        <div style="flex: 1; min-width: 300px;">
-                            <p><strong>The Challenge:</strong> Malaria diagnosis traditionally relies on manual microscopic examination, which is time-consuming and prone to human error. Automation is critical for scaling healthcare in resource-limited settings.</p>
-                            <br>
-                            <p><strong>The Solution:</strong> I built and deployed an end-to-end Computer Vision system using <strong>PyTorch</strong>. The model analyzes thin blood smear images to classify cells as "Parasitized" or "Uninfected" in real-time.</p>
-                            <br>
-                            <ul style="padding-left: 20px;">
-                                <li><strong>Architecture:</strong> Custom 4-Layer CNN (Conv2d, MaxPool, ReLU, Dropout).</li>
-                                <li><strong>Performance:</strong> Achieved <strong>~95% Accuracy</strong> on the NIH Malaria Dataset.</li>
-                                <li><strong>Deployment:</strong> Engineered a full-stack web application using <strong>Streamlit</strong> for instant browser-based inference.</li>
-                            </ul>
-                            <br><br>
-                            <a href="https://malaria-detection-cnn-samuelayeh.streamlit.app/" target="_blank" class="btn" style="background: crimson; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-right: 10px;">🚀 Launch Live App</a>
-                            <a href="https://github.com/Samuelameningayeh/malaria-detection-cnn" target="_blank" class="btn" style="background: #444; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">View Code</a>
-                        </div>
+                    <p><strong>The Solution:</strong><br>
+                        I built and deployed an end-to-end Computer Vision system using <strong>PyTorch</strong>. The model analyzes thin blood smear images to classify cells as "Parasitized" or "Uninfected" in real-time.
+                    </p>
+                    <br>
 
-                        <div style="flex: 1; min-width: 300px;">
-                            <img src="https://raw.githubusercontent.com/Samuelameningayeh/malaria-detection-cnn/main/app_screenshot.png" alt="Streamlit App Interface" style="width: 100%; border-radius: 10px; border: 2px solid #444;">
-                            <p style="text-align: center; font-size: 12px; color: #888; margin-top: 5px;">Live inference on the Streamlit Cloud</p>
-                        </div>
+                    <p><strong>Technical Implementation:</strong>
+                        <ul>
+                            <li><strong>Architecture:</strong> Engineered a custom 4-Layer CNN (Conv2d, MaxPool, ReLU, Dropout) optimized for feature extraction on medical imagery.</li>
+                            <li><strong>Performance:</strong> Achieved <strong>~95% Accuracy</strong> on the NIH Malaria Dataset.</li>
+                            <li><strong>Deployment:</strong> Engineered a full-stack web application using <strong>Streamlit</strong> for instant browser-based inference.</li>
+                        </ul>
+                    </p>
+                    <br>
+
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <img src="https://raw.githubusercontent.com/Samuelameningayeh/malaria-detection-cnn/main/app_screenshot.png" alt="Streamlit App Interface" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px;">
                     </div>
-                </div>
-                </div>
+                    <br><br>
+
+                    <a href="https://malaria-detection-cnn-samuelayeh.streamlit.app/" target="_blank" class="btn" style="background: crimson; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-right: 10px;">🚀 Launch Live App</a>
+                    <a href="https://github.com/Samuelameningayeh/malaria-detection-cnn" target="_blank" class="btn" style="background: #333; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">View Code</a>
+                    <br><br><br>
+                </li>
+            </ol>
         </div>
     </section>
 
-    <!-- footer section start -->
     <footer>
-        <span>Created By <a href="https://www.codingnepalweb.com">Xum</a> | <span class="far fa-copyright"></span> 2020 All rights reserved.</span>
+        <span>Created By Samuel Amening Ayeh | <span class="far fa-copyright"></span> 2025 All rights reserved.</span>
         <a href="https://web.facebook.com/ayehsamuelamening" class="fa fa-facebook"></a>
          <a href="https://twitter.com/SamuelAmening" class="fa fa-twitter"></a>
         <a href="https://www.linkedin.com/in/samuelameningayeh" class="fa fa-linkedin"></a>
