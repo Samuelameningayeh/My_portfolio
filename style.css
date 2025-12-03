@@ -389,6 +389,7 @@ ol a:hover{
 
 /* skills section styling */
 .skills{
+    color:#fff;
     background-color: #222;
 }
 /* .skills .title::after{
