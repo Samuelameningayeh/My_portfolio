@@ -1,3 +1,10 @@
+/* GLOBAL IMAGE FIX */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 /*  import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
@@ -232,7 +239,6 @@ ol a:hover{
     background: none;
 }
 
-
 /* about section styling */
 .about{
     background-color: #c7c3c3;
@@ -350,14 +356,14 @@ ol a:hover{
     content: "what i provide";
 }
 .ALX .serv-content .card{
-    width: calc(85% - 20px);
+    width: 100%;
     background: #222;
     text-align: center;
     border-radius: 6px;
-    padding: 50px 25px;
+    padding: 30px 15px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin: 50px 85px;
+    margin: 20px 0px;
 }
 .ALX .serv-content .card:hover{
     background: crimson;
@@ -383,9 +389,7 @@ ol a:hover{
 }
 
 
-
 /* skills section styling */
-
 .skills .title::after{
     content: "what i know";
 }
@@ -416,7 +420,6 @@ ol a:hover{
     color: crimson;
     background: none;
 }
-
 
 .skills .skills-content .right .text{
     font-size: 20px;
@@ -494,13 +497,11 @@ ol a:hover{
 
 .image-container {
     display: flex;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
+    overflow-x: auto; /* Changed from scroll for better mobile touch */
+    scroll-snap-type: x mandatory; /* Makes images snap into place */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iPhone */
     width: 100%;
-    height: 400px;
-    object-fit:inherit;
-    background-color: #888;
-    scrollbar-width: none; /* Firefox */
+    height: 300px; /* Reduced height for mobile */
 }
 
 .image-container::-webkit-scrollbar {
@@ -508,12 +509,10 @@ ol a:hover{
 }
 
 .image-container img {
-    flex-shrink: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the container */
     scroll-snap-align: center;
-    border-radius: 10px; /* Optional: Adds rounded corners */
+    width: 85%; /* Shows a peek of the next image */
+    height: 100%;
+    margin-right: 10px;
 }
 
 .buttons {
@@ -680,6 +679,7 @@ ol a:hover{
     text-decoration: none;
     border-radius: 50%;
   }
+
 /* footer section styling */
 footer{
     background: #111;
@@ -794,31 +794,26 @@ footer span a:hover{
 
 @media (max-width: 500px) {
     .home .home-content .text-2{
-        font-size: 50px;
+        font-size: 40px; /* Reduced from 50px */
     }
     .home .home-content .text-3{
-        font-size: 27px;
+        font-size: 22px; /* Reduced from 27px */
     }
     .about .about-content .right .text,
     .skills .skills-content .left .text{
-        font-size: 19px;
+        font-size: 18px;
     }
-    .contact .right form .fields{
-        flex-direction: column;
+    
+    /* FIX: Cards should not be too wide */
+    .services .serv-content .card, 
+    .ALX .serv-content .card {
+        width: 100%;
+        margin: 10px 0; /* Add space between stacked cards */
     }
-    .contact .right form .name,
-    .contact .right form .email{
-        margin: 0;
-    }
-    .right form .error-box{
-       width: 150px;
-    }
-    .scroll-up-btn{
-        right: 15px;
-        bottom: 15px;
-        height: 38px;
-        width: 35px;
-        font-size: 23px;
-        line-height: 38px;
+    
+    /* FIX: Images in About section */
+    .about .about-content .left img{
+        height: 300px;
+        width: 300px;
     }
 }
