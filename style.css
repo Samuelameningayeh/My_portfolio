@@ -808,12 +808,18 @@ footer span a:hover{
     .services .serv-content .card, 
     .ALX .serv-content .card {
         width: 100%;
-        margin: 10px 0; /* Add space between stacked cards */
+        margin-bottom: 20px; /* Add space between stacked cards */
+    }
+    .box {
+        padding: 0 10px;
     }
     
     /* FIX: Images in About section */
     .about .about-content .left img{
-        height: 300px;
-        width: 300px;
+        width: 100%;       /* Fill the container width */
+        max-width: 300px;  /* But don't get larger than 300px */
+        height: auto;      /* Calculate height automatically to prevent distortion */
+        display: block;
+        margin: 0 auto 20px auto; /* Center the image */
     }
 }
