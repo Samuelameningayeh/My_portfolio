@@ -63,19 +63,47 @@ $(document).ready(function(){
         }
     });
 
-    // changing images
+    // --- AUTOMATIC IMAGE SLIDER ---
     const container = document.getElementById('imageContainer');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    const scrollAmount = window.innerWidth; // Amount to scroll equals the viewport width
 
-    // Scroll to the next image
+    // Function to handle the scrolling logic
+    function slideNext() {
+        // Use the container's actual width so it works on mobile and desktop
+        const scrollAmount = container.clientWidth; 
+        
+        // Check if we are at the end of the scroll area
+        // (current position + viewer width >= total width)
+        if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
+            // If at end, loop back to the start
+            container.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            // Otherwise, scroll to the next image
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    }
+
+    // 1. Setup the Auto-Slide Timer (Runs every 3000ms = 3 seconds)
+    let autoSlide = setInterval(slideNext, 3000);
+
+    // 2. Helper to reset the timer if the user clicks a button manually
+    // (We don't want the auto-slide to jump right after the user clicks)
+    function resetTimer() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(slideNext, 3000);
+    }
+
+    // 3. Manual Button Listeners
     nextBtn.addEventListener('click', () => {
-        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        slideNext();
+        resetTimer(); 
     });
 
-    // Scroll to the previous image
     prevBtn.addEventListener('click', () => {
+       const scrollAmount = container.clientWidth;
        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+       resetTimer();
     });
 });
+
