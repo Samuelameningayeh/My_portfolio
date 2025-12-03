@@ -290,7 +290,7 @@ ol a:hover{
 /* services section styling */
 .services, .teams{
     color:#fff;
-    background: #111;
+    background-color: #c7c3c3;
 }
 
 .services a .box{
@@ -340,7 +340,7 @@ ol a:hover{
 /* ALX section styling */
 .ALX, .teams{
     color:#fff;
-    background: #111;
+    background-color: #111;
 }
 
 .ALX a .box{
@@ -389,6 +389,9 @@ ol a:hover{
 
 
 /* skills section styling */
+.skills{
+    background-color: #222;
+}
 .skills .title::after{
     content: "what I am good at";
 }
@@ -425,9 +428,9 @@ ol a:hover{
     font-weight: 600;
     margin-bottom: 10px;
 }
-.skills .skills-content .right .bars{
+/* .skills .skills-content .right .bars{
     margin-bottom: 15px;
-}
+} */
 .skills .skills-content .right .info{
     display: flex;
     margin-bottom: 5px;
@@ -438,7 +441,7 @@ ol a:hover{
     font-weight: 500;
     font-size: 18px;
 }
-.skills .skills-content .right .line{
+/* .skills .skills-content .right .line{
     height: 5px;
     width: 100%;
     background: lightgrey;
@@ -451,7 +454,7 @@ ol a:hover{
     left: 0;
     top: 0;
     background: crimson;
-}
+} */
 .skills-content .right .excel::before{
     width: 70%;
 }
@@ -473,34 +476,25 @@ ol a:hover{
 
 
 /* teams section styling */
-.teams .title::after{
+/* .teams .title::after{
     content: "What is unique about me?";
-}
+} */
 .teams {
-    background: #222;
-    border-radius: 6px;
+    background-color: #222;
+    /* border-radius: 6px; */
     padding: 25px 35px;
-    text-align: center;
+    text-align: left;
     overflow: hidden;
 }
-/*
-.vid{
-    background: #222;
-    border-radius: 6px;
-    padding: 25px 35px;
-    text-align: center;
-    overflow: hidden;
-    margin-top: 50px;
-}
-*/
 
 .image-container {
     display: flex;
     overflow-x: auto; /* Changed from scroll for better mobile touch */
     scroll-snap-type: x mandatory; /* Makes images snap into place */
+    scroll-snap-type: y mandatory; /* Makes images snap into place */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iPhone */
     width: 100%;
-    height: 100%; /* Reduced height for mobile */
+    height: 500px; /* Reduced height for mobile */
     scrollbar-width: none;
 }
 
@@ -511,11 +505,12 @@ ol a:hover{
 .image-container img {
     scroll-snap-align: center;
     min-width: 100%; /* Forces image to be full width of container */
+    min-height: 100%; /* Forces image to be full width of container */
     width: 100%;     /* Ensures it doesn't shrink */
     height: 100%;
     object-fit: cover; /* Ensures the image covers the area without stretching/distortion */
     margin-right: 0;   /* Remove margin so there is no gap between images */
-    border-radius: 6px; /* Optional: keeps the rounded corners */
+    /* border-radius: 6px; /* Optional: keeps the rounded corners */ */
 }
 
 .buttons {
@@ -539,6 +534,9 @@ ol a:hover{
 }
 
 /* contact section styling */
+.contact{
+    background-color: #c7c3c3;
+}
 .contact .title::after{
     content: "Get in touch";
 }
